@@ -26,7 +26,9 @@ def save_intervals_to_json(silence_intervals, non_silence_intervals, silence_out
     with open(non_silence_output_json, 'w') as f:
         json.dump(non_silence_data, f, indent=4)
 
-def main(video_path):
+def main():
+    video_path = "/Users/duc/Videos/20240718_C0925_copy.MP4"
+
     # Get the directory of the video file
     video_dir = os.path.dirname(video_path)
     
@@ -41,6 +43,5 @@ def main(video_path):
     os.remove(audio_path)
 
 if __name__ == "__main__":
-    video_path = "/Users/duc/Videos/20240718_C0925_copy.MP4"
-    main(video_path)
+    main()
 
