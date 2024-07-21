@@ -7,7 +7,7 @@ def extract_audio_from_video(video_path, audio_path):
     video = mp.VideoFileClip(video_path)
     video.audio.write_audiofile(audio_path)
 
-def detect_silence(audio_path, silence_thresh=-50, min_silence_len=500):
+def detect_silence(audio_path, silence_thresh=-50, min_silence_len=300):
     audio = AudioSegment.from_file(audio_path)
     silence_intervals = silence.detect_silence(audio, min_silence_len=min_silence_len, silence_thresh=silence_thresh)
     non_silence_intervals = silence.detect_nonsilent(audio, min_silence_len=min_silence_len, silence_thresh=silence_thresh)
